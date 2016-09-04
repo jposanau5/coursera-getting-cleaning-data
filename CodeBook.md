@@ -9,14 +9,14 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 Data Frame              | Source data
 ------------------------|--------------------------------------------
-*tests*             | 'test/X_test.txt': Test set.
-*tests.activities*  | 'test/y_test.txt': Test labels.
-*tests.subjects*    | 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
-*training*          | 'train/X_train.txt': Training set.
-*training.activities* | 'train/y_train.txt': Training labels.
-*training.subjects* | 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
-*features*          | 'features.txt': List of all features.
-*activity.labels*   | 'activity_labels.txt': Links the class labels with their activity name.
+*tests*             | 'UCI HAR Dataset/test/X_test.txt': Test set.
+*tests.activities*  | 'UCI HAR Dataset/test/y_test.txt': Test labels.
+*tests.subjects*    | 'UCI HAR Dataset/test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+*training*          | 'UCI HAR Dataset/train/X_train.txt': Training set.
+*training.activities* | 'UCI HAR Dataset/train/y_train.txt': Training labels.
+*training.subjects* | 'UCI HAR Dataset/train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+*features*          | 'UCI HAR Dataset/features.txt': List of all features.
+*activity.labels*   | 'UCI HAR Dataset/activity_labels.txt': Links the class labels with their activity name.
 
 ## Manipulation and Analysis
 
