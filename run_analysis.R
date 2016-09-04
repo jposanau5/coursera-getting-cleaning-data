@@ -82,6 +82,8 @@ mean.std.avgs <- mean.std.avgs %>%
 colnames(mean.std.avgs)[3:88] <- paste0("avg.", colnames(mean.std.avgs)[3:88])
 
 # Writing final data to CSV
-if(!file.exists("output")) { dir.create(("output") }
-write.csv(mean.std.data, "uci-har-mean-stdev.csv")
-write.csv(mean.std.avgs, "uci-har-mean-stdev-summary.csv")
+if(!file.exists("output")) { dir.create("output") }
+setwd("output")
+write.csv(mean.std.data, "uci-har-mean-stdev.csv", row.names=FALSE)
+write.csv(mean.std.avgs, "uci-har-mean-stdev-summary.csv", row.names=FALSE)
+
