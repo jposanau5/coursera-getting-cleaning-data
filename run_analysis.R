@@ -1,5 +1,4 @@
 # read the test and training data into data.frames
- 
 setwd("UCI HAR Dataset/test")
 tests <- read.table("X_test.txt")
 tests.activities <- read.table("y_test.txt")
@@ -13,49 +12,40 @@ training.subjects <- read.table("subject_train.txt")
 # append subject and activity columns to the training/test data
 # create a phase column to distinguish between training and test data
 # give meaningful names to subject and activity id columns
-
 training <- cbind(training,training.subjects,training.activities,phase="train")
 colnames(training)[562:563] <- c("subject.id", "activity.id")
 tests <- cbind(tests,tests.subjects,tests.activities,phase="test")
 colnames(tests)[562:563] <- c("subject.id", "activity.id")
 
 # merge the training and test data
-
 full.dataset <- rbind(training, tests)
 
 
 # read the feature data into data.frames
-
 setwd("..")
 features <- read.table("features.txt")
 
 # give the features table meaningful column names
-
 names(features) <- c("id", "name")
 
 # identify meansurements on mean or standard deviation
-
 selected.features <- features[grep("mean|std", features$name, ignore.case=TRUE),]
 
 # get a subset of the full dataset containing only mean and standard
 # deviation measurements
-
 mean.std.data <- full.dataset[, c(selected.features$id, c(562:564))]
 
 
 # read the activity labels into data.frames
 # with meaningful column names
-
 activity.labels <- read.table("activity_labels.txt")
 names(activity.labels) <- c("activity.id", "activity.name")
 
 # using the plyr library, append an activity name column
 # reorder the columns, dropping the activity id which is now redundant
-
 library(plyr)
 mean.std.data <- join(mean.std.data, activity.labels, by="activity.id")
 mean.std.data <- mean.std.data[, c(89,87,90,1:86)]
-
 
 # replace all hypens, commas, and parentheses with a period
 selected.features.names <- gsub("([-,\\(\\)])+", "." , selected.features$name)
@@ -74,14 +64,12 @@ names(mean.std.data)[4:89] <- selected.features.names
 
 # Further tidy the data set by converting the subject id column to factors.
 mean.std.data$subject.id <- as.factor(mean.std.data$subject.id)
-	
-	
+
 
 # using the dplyr library, create a data tibble.
 # drop the phase column
 # group by activity and subject
 # calculate the means
-
 library(dplyr)
 mean.std.avgs <- tbl_df(mean.std.data)
 mean.std.avgs <- mean.std.avgs %>% 
@@ -92,7 +80,6 @@ mean.std.avgs <- mean.std.avgs %>%
 
 # prefix the measurement columns with 'avg.' to indicate average
 colnames(mean.std.avgs)[3:88] <- paste0("avg.", colnames(mean.std.avgs)[3:88])
-
 
 # Writing final data to CSV
 if(!file.exists("output")) { dir.create(("output") }
