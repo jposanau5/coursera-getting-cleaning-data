@@ -10,7 +10,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 ## Included Files
 **README.md** - This file.
 
-**CodeBook.md** - Describes source data and derived variables.  The derived variable descriptions contain coniderable detail on how they were derived.  However for more detailed transformation steps, please refer to the comments contained in the scripts.
+**CodeBook.md** - Describes source data and derived data sets.  The derived data set descriptions contain coniderable detail on how they were derived.  However for more detailed transformation steps, please refer to the comments contained in the scripts.
 
 Two scripts are included.  They are intended to run in this order:
 
