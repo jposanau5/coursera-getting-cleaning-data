@@ -1,6 +1,5 @@
 # create a data directory and download the HAR Dataset data file into it
 # unzip the zip file
-
 setwd("C:/")
 if (!file.exists("data")) {dir.create("data")}
 setwd("data")
