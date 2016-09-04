@@ -1,5 +1,4 @@
-# coursera-getting-cleaning-data
-Coursera datascitoolbox Getting and Cleaning Data assignment
+# Coursera datascitoolbox Getting and Cleaning Data assignment
 
 ## Overview
 This repo is for the " Getting and Cleaning Data" assignment for the https://www.coursera.org/course/datascitoolbox data science course. The assignment goal is to "demonstrate an ability to collect, work with, and clean a data set".
